@@ -22,7 +22,7 @@ const gridSize = 4;
         function addRandomTile() {
             const emptyTiles = [];
 
-            let score = document.getElementById('score').textContent;
+            // let score = document.getElementById('score').textContent;
             grid.forEach((row, rowIndex) => {
                 row.forEach((value, colIndex) => {
                     if (value === 0) emptyTiles.push({ rowIndex, colIndex });
@@ -33,10 +33,10 @@ const gridSize = 4;
                 grid[rowIndex][colIndex] = Math.random() < 0.9 ? 2 : 4;
             }else{
                 alert("Game Over! No more moves available.");
-                saveGameToFile();
+                // saveGameToFile();
                 return;
             }
-            scoreUpdate();
+            // scoreUpdate();
         }
 
         // function saveGameToFile() {
@@ -52,25 +52,25 @@ const gridSize = 4;
         //     });
         // }
 
-        function scoreUpdate() {
-            let score = 0;
-            grid.forEach(row => {
-                row.forEach(value => {
-                    if (value > 0) score += value;
-                });
-            });
-            document.getElementById('score').textContent = `Score: ${score}`;
-        }
+        // function scoreUpdate() {
+        //     let score = 0;
+        //     grid.forEach(row => {
+        //         row.forEach(value => {
+        //             if (value > 0) score += value;
+        //         });
+        //     });
+        //     document.getElementById('score').textContent = `Score: ${score}`;
+        // }
 
-        function scoreUpdate() {
-            let score = 0;
-            grid.forEach(row => {
-                row.forEach(value => {
-                    if (value > 0) score += value;
-                });
-            });
-            document.getElementById('score').textContent = `${score}`;
-        }
+        // function scoreUpdate() {
+        //     let score = 0;
+        //     grid.forEach(row => {
+        //         row.forEach(value => {
+        //             if (value > 0) score += value;
+        //         });
+        //     });
+        //     document.getElementById('score').textContent = `${score}`;
+        // }
 
         function slide(row) {
             const filteredRow = row.filter(value => value !== 0);
